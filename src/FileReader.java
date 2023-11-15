@@ -3,7 +3,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
-public class FileReader {
+
+public class FileReader { // класс считывания данных из файла
     ArrayList<String> readFileContents(String fileName) {
         String path = "./resources/" + fileName;
         try {
