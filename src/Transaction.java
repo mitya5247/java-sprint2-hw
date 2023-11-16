@@ -1,3 +1,4 @@
+import javax.naming.InsufficientResourcesException;
 import java.util.ArrayList;
 
 
@@ -23,6 +24,19 @@ public class Transaction { // хранение массивов и ArrayList
 
        }
    }
+
+
+   public Transaction(ArrayList<String> arrayLinesYear, String nameYear) { // конструктор для месяцев
+       for (int i = 1; i < arrayLinesYear.size(); i++) {
+           String[] lines = arrayLinesYear.get(i).split(",");
+           name.add(String.valueOf(lines[0]));
+           quantity = null;
+           isExpense.add(Boolean.parseBoolean(lines[2]));
+           unitPrice.add(Integer.valueOf(lines[1]));
+       }
+       String yearName = nameYear;
+   }
+
 
     @Override
     public String toString() {

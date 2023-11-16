@@ -12,14 +12,19 @@ public class Main {
         ArrayList<String> linesMonth3 = fileReader.readFileContents("m.202103.csv");
         ArrayList<String> yearMonth = fileReader.readFileContents("y.2021.csv");
 
-        MonthlyReport month1 = new MonthlyReport(linesMonth1); // объявляем массивы с месяцами
+        MonthlyReport month1 = new MonthlyReport(linesMonth1, "m.202101.csv"); // объявляем массивы с месяцами
       //  Transaction month2 = new Transaction(linesMonth2);
      //   Transaction month3 = new Transaction(linesMonth3);
+
+        YearlyReport year = new YearlyReport(yearMonth);
+
+        System.out.println("Самая большая прибыль по каждому месяцу");
+        System.out.println(year.benefitForYear());
 
 
       //  boolean linesMonthBool = (month1.name != null) && (month2.name != null) && (month3.name != null);
 
-        System.out.println(yearMonth);
+    //    System.out.println(yearMonth);
 
       //  if (linesMonthBool) {
 
@@ -29,7 +34,9 @@ public class Main {
         //    System.out.println(month3);
 
             System.out.println("Самая большая затрата " + month1.maxExspense());
-     //   } else {
+            System.out.println("Самая большая прибыль " + month1.maxBenefit());
+
+        //   } else {
        //     System.out.println("Файлы не прочитаны");
       //  }
 

@@ -5,15 +5,16 @@ public class MonthlyReport { // класс для работы с уже име�
 
     Transaction month; // передаем экземпляр, в котором храним массив
 
-    public MonthlyReport(ArrayList<String> monthName) {
+    String nameMonth;
+
+    public MonthlyReport(ArrayList<String> monthName, String nameMonth) {
         month = new Transaction(monthName);
+        nameMonth = nameMonth;
+        System.out.println(nameMonth);
         System.out.println(month);
+
     }
 
-
- //   String findMonth() {
-  //      return month.name;
-  //  }
 
     Integer maxExspense() {
         int max = 0;
@@ -30,9 +31,27 @@ public class MonthlyReport { // класс для работы с уже име�
                 }
             }
         }
-        String nameEsxpense = month.name.get(index);
-        System.out.println("Самая большая затрата " + nameEsxpense);
+        String nameExpense = month.name.get(index);
+        System.out.println("Самая большая затрата в месяце " + nameExpense);
         return max;
+    }
+
+    Integer maxBenefit() {
+        int maxBenefit = 0;
+        int index = 0;
+
+        for (int i = 0; i < month.unitPrice.size(); i++) {
+            if (month.isExpense.get(i)) {
+                int benefit = month.unitPrice.get(i) * month.quantity.get(i);
+                if (benefit > maxBenefit) {
+                    index = i;
+                    maxBenefit = benefit;
+                }
+            }
+            String maxBenefitName = month.name.get(index);
+            System.out.println(maxBenefitName);
+        }
+        return maxBenefit;
     }
 
 
