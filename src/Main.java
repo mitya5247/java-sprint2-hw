@@ -1,6 +1,5 @@
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Main {
 
@@ -8,33 +7,34 @@ public class Main {
 
         FileReader fileReader = new FileReader();
         ArrayList<String> linesMonth1 = fileReader.readFileContents("m.202101.csv");
+        System.out.println(linesMonth1);
         ArrayList<String> linesMonth2 = fileReader.readFileContents("m.202102.csv");
         ArrayList<String> linesMonth3 = fileReader.readFileContents("m.202103.csv");
         ArrayList<String> yearMonth = fileReader.readFileContents("y.2021.csv");
 
-        MonthlyReport month1 = new MonthlyReport(linesMonth1, "m.202101.csv"); // объявляем массивы с месяцами
-      //  Transaction month2 = new Transaction(linesMonth2);
-     //   Transaction month3 = new Transaction(linesMonth3);
-
-        YearlyReport year = new YearlyReport(yearMonth);
-
-        System.out.println("Самая большая прибыль по каждому месяцу");
-        System.out.println(year.benefitForYear());
+      //  MonthlyReport month1 = new MonthlyReport(linesMonth1, "m.202101.csv"); // объявляем массивы с месяцами
+ //       Transaction month1 = new Transaction(linesMonth1, "m.202101.csv");
+        Transaction month2 = new Transaction(linesMonth2, "m.202102.csv");
+        Transaction month3 = new Transaction(linesMonth3, "m.202103.csv");
 
 
-      //  boolean linesMonthBool = (month1.name != null) && (month2.name != null) && (month3.name != null);
+          YearlyReport year = new YearlyReport(yearMonth);
+          year.benefitForMonth();
+        System.out.println("Средний расход " + year.averageExpense());
+        System.out.println("Средний доход " + year.averageBenefit());
 
-    //    System.out.println(yearMonth);
+        MonthTotalPerYear ex1 = new MonthTotalPerYear(linesMonth1, linesMonth2, linesMonth3);
+        System.out.println("Самая большая прибыль за 3 месяца" + ex1.maxBenefitPerMonthAll());
 
-      //  if (linesMonthBool) {
+        System.out.println("Самая большая траты за 3 месяца" + ex1.maxExspensePerMonthAll());
 
+        // System.out.println(yearMonth);
+      //  System.out.println("Самая большая прибыль по каждому месяцу");
+//        System.out.println(year.benefitForMonth());
 
-        //    System.out.println(month1);
-         //   System.out.println(month2);
-        //    System.out.println(month3);
-
-            System.out.println("Самая большая затрата " + month1.maxExspense());
-            System.out.println("Самая большая прибыль " + month1.maxBenefit());
+    //    MonthlyReport month1 = new MonthlyReport(linesMonth1, "m.202101.csv");
+       //     System.out.println("Самая большая затрата " + month1.maxExspense());
+      //     System.out.println("Самая большая прибыль " + month1.maxBenefit());
 
         //   } else {
        //     System.out.println("Файлы не прочитаны");
