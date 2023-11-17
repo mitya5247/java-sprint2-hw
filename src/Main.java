@@ -29,7 +29,8 @@ public class Main {
         ex1.printStatistic();
        // System.out.println("Самая большая прибыль за 3 месяца" + ex1.maxBenefitPerMonthAll());
 
-        System.out.println("Самая большая траты за 3 месяца" + ex1.maxExspensePerMonthAll());
+       // System.out.println("Самая большая траты за 3 месяца" + ex1.maxExspensePerMonthAll());
+        ex1.maxExspensePerMonthAll();
 
         // System.out.println(yearMonth);
       //  System.out.println("Самая большая прибыль по каждому месяцу");

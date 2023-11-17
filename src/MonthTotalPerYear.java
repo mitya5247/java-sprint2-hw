@@ -121,25 +121,37 @@ public class MonthTotalPerYear { // подготовка данных для с�
         }
 
 
-     //   void printStatistic() {
-     //       System.out.println(monthArrayMap1);
-
-
-     //   }
-
-
-        Integer maxExspensePerMonthAll() {
+        void maxExspensePerMonthAll() {
             int maxSumExspense = 0;
-            int sum = 0;
+            int maxSumBen = 0;
 
-       //     int monthBenefitFirst = month1.monthExpsenseSum();
-        //    int monthBenefitSecond = month2.monthExpsenseSum();
-         //   int monthBenefitThird = month3.monthExpsenseSum();
 
-        //    sum = monthBenefitFirst + monthBenefitSecond + monthBenefitThird;
-        //    maxSumExspense = sum;
 
-            return maxSumExspense;
+
+            for (int i = 0; i < month1.month.unitPrice.size(); i++) {
+
+                    if (!month1.month.isExpense.get(i)) {
+                        maxSumBen += month1.month.quantity.get(i) * month1.month.unitPrice.get(i);
+                    }
+                }
+            System.out.println(maxSumBen);
+
+        //    for (int i = 0; i < month1.month.quantity.size(); i++) {
+         //       if (month1.month.isExpense.get(i)) {
+         //           maxSumExspense += month1.month.quantity.get(i) * month1.month.unitPrice.get(i);
+         //       }
+
+         //   }
+
+        //    System.out.println(maxSumExspense);
+
+         //   int monthBenefit = maxSumBen - maxSumExspense;
+
+       //     System.out.println(monthBenefit);
+
+
+
+
         }
 
 
