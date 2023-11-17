@@ -31,7 +31,7 @@ public class MonthlyReport { // класс для работы с уже име�
         }
         String nameExpense = month.name.get(index);
         System.out.println("Самая большая затрата в месяце " + nameExpense);
-        return max;
+        return index;
     }
 
     Integer maxBenefit() {
@@ -49,7 +49,7 @@ public class MonthlyReport { // класс для работы с уже име�
           //  String maxBenefitName = month.name.get(index);
           //  System.out.println(maxBenefitName);
         }
-        return maxBenefit;
+        return index;
     }
 
     Integer monthBenefitSum() {
