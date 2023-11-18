@@ -21,8 +21,7 @@ public class YearlyReport {  // класс, отвечающий за вывод
 
                 value = value *-1;
             }
-            yearToPrice.put(year.name.get(i), yearToPrice.getOrDefault(year.name.get(i), 0) + value);
-
+            yearToPrice.put(year.name.get(i), yearToPrice.getOrDefault(year.name.get(i), 0) + value); // сразу считаем прибыль в конструкторе
         }
 
         System.out.println(yearToPrice);
@@ -35,7 +34,7 @@ public class YearlyReport {  // класс, отвечающий за вывод
 
     void findYear() {}
 
-    void benefitForMonth() {
+    void printBenefitForMonth() {
         int maxBenefit = 0;
         String key = "";
         for (String nameMonth : yearToPrice.keySet()) {

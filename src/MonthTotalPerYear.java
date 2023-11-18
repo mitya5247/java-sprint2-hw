@@ -5,12 +5,6 @@ import java.util.HashMap;
 public class MonthTotalPerYear { // подготовка данных для сверки(считать все месячные отчеты);
 
 
-  //  String monthName;
-//    Transaction month1;
-//    Transaction month2;
- //   Transaction month3;
-
-
     MonthlyReport month1;
     MonthlyReport month2;
     MonthlyReport month3;
@@ -18,18 +12,6 @@ public class MonthTotalPerYear { // подготовка данных для с�
     ArrayList<HashMap> monthArrayMap1 = new ArrayList<>(); // каждый массив из HashMap хранит одну мапу по самому большому доходу(первую), одну мапу по самому большому расходу за указанный месяц
     ArrayList<HashMap> monthArrayMap2 = new ArrayList<>();
     ArrayList<HashMap> monthArrayMap3 = new ArrayList<>();
-
-
-
-    // HashMap<String, HashMap<String, Integer>> maxBenefitMonth1 = new HashMap<>();
- //   HashMap<String, HashMap<String, Integer>> maxExpenseMonth1 = new HashMap<>();
- //   HashMap<String, HashMap<String, Integer>> maxBenefitMonth2 = new HashMap<>();
- //   HashMap<String, HashMap<String, Integer>> maxExpenseMonth2 = new HashMap<>();
- //   HashMap<String, HashMap<String, Integer>> maxBenefitMonth3 = new HashMap<>();
- //   HashMap<String, HashMap<String, Integer>> maxExpenseMonth3 = new HashMap<>();
-
-
-
 
 
   //    public MonthTotalPerYear(Transaction month1, Transaction month2, Transaction month3) { // предыдущий варик
@@ -112,47 +94,38 @@ public class MonthTotalPerYear { // подготовка данных для с�
             monthArrayMap3.add(nameMonth3);
             monthArrayMap3.add(nameMonthExp3);
 
-            System.out.println("За месяц " + month1.month.nameMonth + " прибыль составила " + monthArrayMap1.get(0).get(month1.month.nameMonth) + " рублей.");
-            System.out.println("За месяц " + month2.month.nameMonth + " прибыль составила " + monthArrayMap2.get(0).get(month2.month.nameMonth) + " рублей.");
-            System.out.println("За месяц " + month3.month.nameMonth + " прибыль составила " + monthArrayMap3.get(0).get(month3.month.nameMonth) + " рублей.");
+            System.out.println("За месяц " + month1.month.nameMonth + " самый прибыльный товар - " + monthArrayMap1.get(0).get(month1.month.nameMonth) + " рублей.");
+            System.out.println("За месяц " + month2.month.nameMonth + " самый прибыльный товар - " + monthArrayMap2.get(0).get(month2.month.nameMonth) + " рублей.");
+            System.out.println("За месяц " + month3.month.nameMonth + " самый прибыльный товар - " + monthArrayMap3.get(0).get(month3.month.nameMonth) + " рублей.");
 
 
 
         }
 
+    Integer maxBenefitPerMonth(MonthlyReport month) {
+        int maxSumBen = 0;
 
-        void maxExspensePerMonthAll() {
-            int maxSumExspense = 0;
-            int maxSumBen = 0;
+        for (int i = 0; i < month.month.unitPrice.size(); i++) {
 
-
-
-
-            for (int i = 0; i < month1.month.unitPrice.size(); i++) {
-
-                    if (!month1.month.isExpense.get(i)) {
-                        maxSumBen += month1.month.quantity.get(i) * month1.month.unitPrice.get(i);
-                    }
-                }
-            System.out.println(maxSumBen);
-
-        //    for (int i = 0; i < month1.month.quantity.size(); i++) {
-         //       if (month1.month.isExpense.get(i)) {
-         //           maxSumExspense += month1.month.quantity.get(i) * month1.month.unitPrice.get(i);
-         //       }
-
-         //   }
-
-        //    System.out.println(maxSumExspense);
-
-         //   int monthBenefit = maxSumBen - maxSumExspense;
-
-       //     System.out.println(monthBenefit);
-
-
-
-
+            if (!month.month.isExpense.get(i)) {
+                maxSumBen += month.month.quantity.get(i) * month.month.unitPrice.get(i);
+            }
         }
+        return maxSumBen;
+    }
+
+    Integer maxExpensePerMonth(MonthlyReport month) {
+        int maxSumExspense = 0;
+      //  int maxSumBen = 0;
+
+        for (int i = 0; i < month.month.unitPrice.size(); i++) {
+
+            if (month.month.isExpense.get(i)) {
+                maxSumExspense += month.month.quantity.get(i) * month.month.unitPrice.get(i);
+            }
+        }
+        return maxSumExspense;
+    }
 
 
-}
+    }
