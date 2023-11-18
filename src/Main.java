@@ -9,8 +9,6 @@ public class Main {
         FileReader fileReader = new FileReader();
         int readCounterMonthReport = 0;
         int readCounterYearReport = 0;
-        boolean checker = (readCounterMonthReport == 1) && (readCounterYearReport == 1);
-
 
 
         ArrayList<String> linesMonth1 = fileReader.readFileContents("m.202101.csv");
@@ -23,22 +21,7 @@ public class Main {
 
         ReportEngine reportEngine = new ReportEngine(yearMonth, linesMonth1, linesMonth2, linesMonth3);
         YearlyReport year = new YearlyReport(yearMonth);
-
-
-
-     //   MonthlyReport month1 = new MonthlyReport(linesMonth1, "m.202101.csv"); // объявляем массивы с месяцами
-     //   Transaction month1 = new Transaction(linesMonth1, "m.202101.csv");
-     //   Transaction month2 = new Transaction(linesMonth2, "m.202102.csv");
-      //  Transaction month3 = new Transaction(linesMonth3, "m.202103.csv");
-
-
-
-          year.printBenefitForMonth();
-        System.out.println("Средний расход " + year.averageExpense());
-        System.out.println("Средний доход " + year.averageBenefit());
-
-
-
+        
         while (true) {
             printMenu();
             int command = scanner.nextInt();

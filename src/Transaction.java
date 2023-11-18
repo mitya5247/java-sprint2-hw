@@ -1,4 +1,3 @@
-import javax.naming.InsufficientResourcesException;
 import java.util.ArrayList;
 
 
@@ -16,7 +15,6 @@ public class Transaction { // хранение массивов и ArrayList
 
 
    public Transaction(ArrayList<String> Arraylines, String nameMonth) {
-       System.out.println(Arraylines.size());
        for (int i = 1; i < Arraylines.size(); i++) {
            String[] lines = Arraylines.get(i).split(",");
            name.add(lines[0]);
@@ -37,27 +35,8 @@ public class Transaction { // хранение массивов и ArrayList
            isExpense.add(Boolean.parseBoolean(lines[2]));
            unitPrice.add(Integer.valueOf(lines[1]));
        }
-   //    String yearName = nameYear;
    }
 
-//    void addMonth(Transaction currentMonth) {
-//        for (int i = 0; i < currentMonth.name.size(); i++) {
-//            name.add(currentMonth.name.get(i));
-//            unitPrice.add(currentMonth.unitPrice.get(i));
-//            isExpense.add(currentMonth.isExpense.get(i));
-//            quantity.add(currentMonth.quantity.get(i));
-//        }
-//    }
-
-    @Override
-    public String toString() {
-        return "Transaction{" +
-                "name=" + name +
-                ", isExpense=" + isExpense +
-                ", quantity=" + quantity +
-                ", unitPrice=" + unitPrice +
-                '}';
-    }
 
 
 }

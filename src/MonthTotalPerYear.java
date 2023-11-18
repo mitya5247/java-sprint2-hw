@@ -14,25 +14,8 @@ public class MonthTotalPerYear { // подготовка данных для с�
     ArrayList<HashMap> monthArrayMap3 = new ArrayList<>();
 
 
-  //    public MonthTotalPerYear(Transaction month1, Transaction month2, Transaction month3) { // предыдущий варик
 
     public MonthTotalPerYear(ArrayList<String> month1, ArrayList<String> month2, ArrayList<String> month3) {
-//        month1.addMonth(month2);
-//        month1.addMonth(month3);
-//        System.out.println(month1);
-//        ArrayList<Transaction> monthTotal = new ArrayList<>();
-//        monthTotal.add(month1);
-//        monthTotal.add(month2);
-//        monthTotal.add(month3);
-
-    //    this.month1 = new MonthlyReport(month1, "m.202101.csv");
-    //    this.month2 = new MonthlyReport(month2, "m.202102.csv");
-    //    this.month3 = new MonthlyReport(month3, "m.202103.csv");
-    //   totalQuantityMonth.put(month1.get(), month1);
-    //    totalQuantityMonth.put(month2.nameMonth, month2);
-    //    totalQuantityMonth.put(month3.nameMonth, month3);
-    //    System.out.println(totalQuantityMonth);
-    //      System.out.println(monthTotal);
 
         this.month1 = new MonthlyReport(month1, "m.202101.csv");
         this.month2 = new MonthlyReport(month2, "m.202102.csv");

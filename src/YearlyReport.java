@@ -14,7 +14,6 @@ public class YearlyReport {  // класс, отвечающий за вывод
 
     public YearlyReport(ArrayList<String> yearName) { // идея на вход подавать ArrayList, а делать HashMap, key - месяц, value = ArrayList <Integer> через цикл, чтобы isExpense проверялось, и присваивался минус при false
         year = new Transaction(yearName);
-    //    HashMap<String, Integer> yearToPrice = new HashMap<>();
         for (int i = 0; i < year.unitPrice.size(); i++) {
             int value = year.unitPrice.get(i);
             if (year.isExpense.get(i)) {
@@ -24,15 +23,12 @@ public class YearlyReport {  // класс, отвечающий за вывод
             yearToPrice.put(year.name.get(i), yearToPrice.getOrDefault(year.name.get(i), 0) + value); // сразу считаем прибыль в конструкторе
         }
 
-        System.out.println(yearToPrice);
-
-
     }
 
 
 
 
-    void findYear() {}
+    // void findYear() {}
 
     void printBenefitForMonth() {
         int maxBenefit = 0;
@@ -40,7 +36,7 @@ public class YearlyReport {  // класс, отвечающий за вывод
         for (String nameMonth : yearToPrice.keySet()) {
             int benefit = yearToPrice.get(nameMonth);
             key = nameMonth;
-            System.out.println("Месяц - " + key + " прибыль - " + benefit);
+            System.out.println("Месяц - " + key + " прибыль - " + benefit + " рублей.");
         }
 
 
@@ -57,7 +53,6 @@ public class YearlyReport {  // класс, отвечающий за вывод
                 averageExpense = sum / count;
             }
         }
-        System.out.println(sum);
         return averageExpense;
     }
 
@@ -72,7 +67,6 @@ public class YearlyReport {  // класс, отвечающий за вывод
                 averageBenefit = sum / count;
             }
         }
-        System.out.println(sum);
         return averageBenefit;
     }
 

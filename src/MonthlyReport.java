@@ -9,7 +9,6 @@ public class MonthlyReport { // класс для работы с уже име�
 
     public MonthlyReport(ArrayList<String> monthName, String nameMonth) {
         month = new Transaction(monthName, nameMonth);
-      //  System.out.println(month);
 
     }
 
@@ -30,7 +29,7 @@ public class MonthlyReport { // класс для работы с уже име�
             }
         }
         String nameExpense = month.name.get(index);
-        System.out.println("Самая большая затрата в месяце " + nameExpense);
+
         return index;
     }
 
@@ -47,7 +46,7 @@ public class MonthlyReport { // класс для работы с уже име�
                 }
             }
           //  String maxBenefitName = month.name.get(index);
-          //  System.out.println(maxBenefitName);
+
         }
         return index;
     }
