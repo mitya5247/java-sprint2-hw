@@ -1,4 +1,3 @@
-import javax.naming.InsufficientResourcesException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -21,68 +20,27 @@ public class MonthTotalPerYear { // подготовка данных для с�
         this.month2 = new MonthlyReport(month2, "m.202102.csv");
         this.month3 = new MonthlyReport(month3, "m.202103.csv");
 
-
-    //    System.out.println(month1);
-
         }
 
-        void printStatistic() {
-            HashMap<String, HashMap<String, Integer>> nameMonth1 = new HashMap<>();
-            HashMap<String, Integer> maxBenefitMonth1 = new HashMap<>();
+        void printStatistic(MonthlyReport month, ArrayList<HashMap> monthArrayMap) {
 
-            maxBenefitMonth1.put(month1.month.name.get(month1.maxBenefit()), month1.month.unitPrice.get(month1.maxBenefit())*month1.month.quantity.get(month1.maxBenefit()));
-            nameMonth1.put(month1.month.nameMonth, maxBenefitMonth1);
+            HashMap<String, HashMap<String, Integer>> nameMonth = new HashMap<>();
+            HashMap<String, Integer> maxBenefitMonth = new HashMap<>();
 
-            HashMap<String, HashMap<String, Integer>> nameMonth2 = new HashMap<>();
-            HashMap<String, Integer> maxBenefitMonth2 = new HashMap<>();
+            maxBenefitMonth.put(month.month.name.get(month.maxBenefit()), month.month.unitPrice.get(month.maxBenefit()) * month.month.quantity.get(month.maxBenefit()));
+            nameMonth.put(month.month.nameMonth, maxBenefitMonth);
 
-            maxBenefitMonth2.put(month2.month.name.get(month2.maxBenefit()), month2.month.unitPrice.get(month2.maxBenefit())*month2.month.quantity.get(month2.maxBenefit()));
-            nameMonth2.put(month2.month.nameMonth, maxBenefitMonth2);
+            HashMap<String, HashMap<String, Integer>> nameMonthExp = new HashMap<>();
+            HashMap<String, Integer> maxExspenseMonth = new HashMap<>();
 
-            HashMap<String, HashMap<String, Integer>> nameMonth3 = new HashMap<>();
-            HashMap<String, Integer> maxBenefitMonth3 = new HashMap<>();
+            maxExspenseMonth.put(month.month.name.get(month.maxExspense()), month.month.unitPrice.get(month.maxExspense()) * month.month.quantity.get(month.maxExspense()));
+            nameMonthExp.put(month.month.nameMonth, maxExspenseMonth);
 
-            maxBenefitMonth3.put(month3.month.name.get(month3.maxBenefit()), month3.month.unitPrice.get(month3.maxBenefit())*month3.month.quantity.get(month3.maxBenefit()));
-            nameMonth3.put(month3.month.nameMonth, maxBenefitMonth3);
+            monthArrayMap.add(nameMonth);
+            monthArrayMap.add(nameMonthExp);
 
-            HashMap<String, HashMap<String, Integer>> nameMonthExp1 = new HashMap<>();
-            HashMap<String, Integer> maxExpMonth1 = new HashMap<>();
-
-            maxExpMonth1.put(month1.month.name.get(month1.maxExspense()), month1.month.unitPrice.get(month1.maxExspense())*month1.month.quantity.get(month1.maxExspense()));
-            nameMonthExp1.put(month1.month.nameMonth, maxExpMonth1);
-
-            HashMap<String, HashMap<String, Integer>> nameMonthExp2 = new HashMap<>();
-            HashMap<String, Integer> maxExpMonth2 = new HashMap<>();
-
-            maxExpMonth2.put(month2.month.name.get(month2.maxExspense()), month2.month.unitPrice.get(month2.maxExspense())*month2.month.quantity.get(month2.maxExspense()));
-            nameMonthExp2.put(month2.month.nameMonth, maxExpMonth2);
-
-
-            HashMap<String, HashMap<String, Integer>> nameMonthExp3 = new HashMap<>();
-            HashMap<String, Integer> maxExpMonth3 = new HashMap<>();
-
-            maxExpMonth3.put(month3.month.name.get(month3.maxExspense()), month3.month.unitPrice.get(month3.maxExspense())*month3.month.quantity.get(month3.maxExspense()));
-            nameMonthExp3.put(month3.month.nameMonth, maxExpMonth3);
-
-
-            monthArrayMap1.add(nameMonth1);
-            monthArrayMap1.add(nameMonthExp1);
-            System.out.println(monthArrayMap1);
-
-
-            monthArrayMap2.add(nameMonth2);
-            monthArrayMap2.add(nameMonthExp2);
-
-
-            monthArrayMap3.add(nameMonth3);
-            monthArrayMap3.add(nameMonthExp3);
-
-            System.out.println("За месяц " + month1.month.nameMonth + " самый прибыльный товар - " + monthArrayMap1.get(0).get(month1.month.nameMonth) + " рублей.");
-            System.out.println("За месяц " + month2.month.nameMonth + " самый прибыльный товар - " + monthArrayMap2.get(0).get(month2.month.nameMonth) + " рублей.");
-            System.out.println("За месяц " + month3.month.nameMonth + " самый прибыльный товар - " + monthArrayMap3.get(0).get(month3.month.nameMonth) + " рублей.");
-
-
-
+            System.out.println("За месяц " + month.month.nameMonth  + " самый прибыльный товар " + monthArrayMap.get(0).get(month.month.nameMonth) + " рублей.");
+            System.out.println("За месяц " + month.month.nameMonth + " cамая большая трата " + monthArrayMap.get(1).get(month.month.nameMonth) + " рублей.");
         }
 
     Integer maxBenefitPerMonth(MonthlyReport month) {

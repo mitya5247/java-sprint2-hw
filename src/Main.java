@@ -40,13 +40,17 @@ public class Main {
                 }
             } else if (command == 4) {
                 if (readCounterMonthReport == 1) {
-                    monthTotal.printStatistic();
+                    monthTotal.printStatistic(monthTotal.month1, monthTotal.monthArrayMap1);
+                    monthTotal.printStatistic(monthTotal.month2, monthTotal.monthArrayMap2);
+                    monthTotal.printStatistic(monthTotal.month3, monthTotal.monthArrayMap3);
                 } else {
                     System.out.println("Необходимо сначала считать файлы");
                 }
             } else if (command == 5) {
                 if (readCounterYearReport == 1) {
                     year.printBenefitForMonth();
+                    System.out.println("Средний расход за все имеющиеся операции в году - " + year.averageExpense() + " рублей.");
+                    System.out.println("Средний доход за все имеющиеся операции в году - " + year.averageBenefit() + " рублей.");
                 } else {
                     System.out.println("Необходимо считать годовой отчет");
                 }

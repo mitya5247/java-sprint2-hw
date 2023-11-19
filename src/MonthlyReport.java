@@ -20,16 +20,12 @@ public class MonthlyReport { // класс для работы с уже име�
         for (int i = 0; i < month.quantity.size(); i++) {
             if (month.isExpense.get(i)) {
             int expense = month.unitPrice.get(i) * month.quantity.get(i);
-             //   expense = -expense; // при суммировании можно использовать
                 if (max < expense) {
-                  //  System.out.println(month.name);
                     max = expense;
                     index = i;
                 }
             }
         }
-        String nameExpense = month.name.get(index);
-
         return index;
     }
 
@@ -45,7 +41,6 @@ public class MonthlyReport { // класс для работы с уже име�
                     maxBenefit = benefit;
                 }
             }
-          //  String maxBenefitName = month.name.get(index);
 
         }
         return index;
@@ -72,19 +67,5 @@ public class MonthlyReport { // класс для работы с уже име�
         }
         return sum;
     }
-
-
-
-
-//    void addMonth(Transaction currentMonth) {
-//        for (int i = 0; i < currentMonth.name.size(); i++) {
-//            month.name.add(currentMonth.name.get(i));
-//            month.unitPrice.add(currentMonth.unitPrice.get(i));
-//            month.isExpense.add(currentMonth.isExpense.get(i));
-//            month.quantity.add(currentMonth.quantity.get(i));
-//        }
-//    }
-
-
 
 }

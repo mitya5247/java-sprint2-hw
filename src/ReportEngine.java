@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class ReportEngine { // класс формирования вывода информации (?), сверка отчетов(?)
+public class ReportEngine { // класс формирования вывода информации, сверка отчетов
 
     MonthTotalPerYear monthlySumValues; // загружаем сюда объекты для сверки
     YearlyReport yearlyReport;

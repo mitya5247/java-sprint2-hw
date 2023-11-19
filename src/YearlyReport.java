@@ -26,12 +26,7 @@ public class YearlyReport {  // класс, отвечающий за вывод
     }
 
 
-
-
-    // void findYear() {}
-
     void printBenefitForMonth() {
-        int maxBenefit = 0;
         String key = "";
         for (String nameMonth : yearToPrice.keySet()) {
             int benefit = yearToPrice.get(nameMonth);
