@@ -1,3 +1,8 @@
+package project.engine;
+
+
+import project.store.*;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -6,12 +11,12 @@ public class ReportEngine { // класс формирования вывода 
     MonthTotalPerYear monthlySumValues; // загружаем сюда объекты для сверки
     YearlyReport yearlyReport;
 
-    ReportEngine(ArrayList<String> yearnName, ArrayList<String> month1, ArrayList<String> month2, ArrayList<String> month3) { // получаем экземпляры классов monthlyReport и YearlyReport при инициализации. Тип - объекты ( HashMap ?)
+    public ReportEngine(ArrayList<String> yearnName, ArrayList<String> month1, ArrayList<String> month2, ArrayList<String> month3) { // получаем экземпляры классов monthlyReport и project.store.YearlyReport при инициализации. Тип - объекты ( HashMap ?)
         this.yearlyReport = new YearlyReport(yearnName);
         this.monthlySumValues = new MonthTotalPerYear(month1, month2, month3);
     }
 
-    void checkReport(MonthTotalPerYear monthesReport, YearlyReport yearReport) {
+    public void checkReport(MonthTotalPerYear monthesReport, YearlyReport yearReport) {
 
         Integer benefitForMonthInYear1 = 0;
         Integer benefitForMonthInYear2 = 0;

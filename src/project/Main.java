@@ -1,3 +1,9 @@
+package project;
+
+import project.reader.FileReader;
+import project.engine.*;
+import project.store.*;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 

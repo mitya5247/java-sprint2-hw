@@ -1,3 +1,4 @@
+package project.store;
 
 import java.util.ArrayList;
 public class MonthlyReport { // класс для работы с уже имеющимся массивом данных(нахождение различных параметров) (месяц, самый прибыльный товар, самая большая трата)

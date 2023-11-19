@@ -1,15 +1,17 @@
+package project.store;
+
 import java.util.ArrayList;
 
 
 public class Transaction { // хранение массивов и ArrayList
 
-    ArrayList<String> name = new ArrayList<>();
+    public ArrayList<String> name = new ArrayList<>();
 
-    ArrayList<Boolean> isExpense = new ArrayList<>();
+    public ArrayList<Boolean> isExpense = new ArrayList<>();
     ArrayList<Integer> quantity = new ArrayList<>();
 
 
-    ArrayList<Integer> unitPrice = new ArrayList<>();
+    public ArrayList<Integer> unitPrice = new ArrayList<>();
 
     String nameMonth;
 

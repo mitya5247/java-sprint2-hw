@@ -1,3 +1,7 @@
+package project.store;
+
+import project.store.Transaction;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -5,7 +9,7 @@ import java.util.HashMap;
 public class YearlyReport {  // класс, отвечающий за вывод(!) информации (год, прибыль по каждому месяцу, ср.расход за все операции в году, средний доход)
 
 
-    Transaction year;
+    public Transaction year;
     HashMap<String, Integer> yearToPrice = new HashMap<>();
 
 
@@ -26,7 +30,7 @@ public class YearlyReport {  // класс, отвечающий за вывод
     }
 
 
-    void printBenefitForMonth() {
+    public void printBenefitForMonth() {
         String key = "";
         for (String nameMonth : yearToPrice.keySet()) {
             int benefit = yearToPrice.get(nameMonth);
@@ -37,7 +41,7 @@ public class YearlyReport {  // класс, отвечающий за вывод
 
     }
 
-    int averageExpense() {
+    public int averageExpense() {
         int averageExpense = 0;
         int count = 0;
         int sum = 0;
@@ -51,7 +55,7 @@ public class YearlyReport {  // класс, отвечающий за вывод
         return averageExpense;
     }
 
-    int averageBenefit() {
+    public int averageBenefit() {
         int averageBenefit = 0;
         int count = 0;
         int sum = 0;

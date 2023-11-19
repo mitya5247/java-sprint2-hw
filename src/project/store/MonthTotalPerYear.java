@@ -1,16 +1,20 @@
+package project.store;
+
+import project.store.MonthlyReport;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MonthTotalPerYear { // подготовка данных для сверки(считать все месячные отчеты);
 
 
-    MonthlyReport month1;
-    MonthlyReport month2;
-    MonthlyReport month3;
+    public MonthlyReport month1;
+    public MonthlyReport month2;
+    public MonthlyReport month3;
 
-    ArrayList<HashMap> monthArrayMap1 = new ArrayList<>(); // каждый массив из HashMap хранит одну мапу по самому большому доходу(первую), одну мапу по самому большому расходу за указанный месяц
-    ArrayList<HashMap> monthArrayMap2 = new ArrayList<>();
-    ArrayList<HashMap> monthArrayMap3 = new ArrayList<>();
+    public ArrayList<HashMap> monthArrayMap1 = new ArrayList<>(); // каждый массив из HashMap хранит одну мапу по самому большому доходу(первую), одну мапу по самому большому расходу за указанный месяц
+    public ArrayList<HashMap> monthArrayMap2 = new ArrayList<>();
+    public ArrayList<HashMap> monthArrayMap3 = new ArrayList<>();
 
 
 
@@ -22,7 +26,7 @@ public class MonthTotalPerYear { // подготовка данных для с�
 
         }
 
-        void printStatistic(MonthlyReport month, ArrayList<HashMap> monthArrayMap) {
+        public void printStatistic(MonthlyReport month, ArrayList<HashMap> monthArrayMap) {
 
             HashMap<String, HashMap<String, Integer>> nameMonth = new HashMap<>();
             HashMap<String, Integer> maxBenefitMonth = new HashMap<>();
@@ -43,7 +47,7 @@ public class MonthTotalPerYear { // подготовка данных для с�
             System.out.println("За месяц " + month.month.nameMonth + " cамая большая трата " + monthArrayMap.get(1).get(month.month.nameMonth) + " рублей.");
         }
 
-    Integer maxBenefitPerMonth(MonthlyReport month) {
+    public Integer maxBenefitPerMonth(MonthlyReport month) {
         int maxSumBen = 0;
 
         for (int i = 0; i < month.month.unitPrice.size(); i++) {
@@ -55,7 +59,7 @@ public class MonthTotalPerYear { // подготовка данных для с�
         return maxSumBen;
     }
 
-    Integer maxExpensePerMonth(MonthlyReport month) {
+    public Integer maxExpensePerMonth(MonthlyReport month) {
         int maxSumExspense = 0;
       //  int maxSumBen = 0;
 
