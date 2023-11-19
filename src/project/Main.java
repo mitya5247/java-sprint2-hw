@@ -1,7 +1,7 @@
 package project;
 
 import project.reader.FileReader;
-import project.engine.*;
+import project.checker.*;
 import project.store.*;
 
 import java.util.Scanner;
